@@ -1,0 +1,19 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "firstname": "Akramjon",
+      "lastname": "Nuriddinov"
+    },
+    {
+      "id": 2,
+      "firstname": "Doston",
+      "lastname": "Madaminov"
+    },
+    {
+      "id": 2,
+      "firstname": "Kamron",
+      "lastname": "Fozilov"
+    }
+  ]
+}
