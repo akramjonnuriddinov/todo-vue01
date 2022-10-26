@@ -11,6 +11,7 @@ const addBtn = () => {
   if(input.value !== '') {
     todos.value.push(input.value)
     input.value = ''
+    disabled = 1
   }
 }
 
@@ -22,22 +23,22 @@ const editBtn = () => {
   disabled = (disabled + 1) % 2
 }
 
-watch(todos, (newValue) => {
-  localStorage.setItem('todos', JSON.stringify(newValue))
-}, {
-  deep: true
-})
+// watch(todos, (newValue) => {
+//   localStorage.setItem('todos', JSON.stringify(newValue))
+// }, {
+//   deep: true
+// })
 
 
-onMounted(() => {
-  todos.value = JSON.parse(localStorage.getItem('todos'))
-})
+// onMounted(() => {
+//   todos.value = JSON.parse(localStorage.getItem('todos'))
+// })
 </script>
 
 <template>
   <div class="bg-white container mx-auto px-5 my-5 max-w-2xl py-5">
     <h1 class="text-2xl font-bold text-center mb-4">TODO LIST</h1>
-    <div class="flex justify-between mb-5">
+    <div class="flex justify-between mb-8">
       <input v-model="input" class="border px-2 py-2 w-full text-xl mr-4" type="text" placeholder="Enter the task">
       <button @click="addBtn" class="bg-blue-500 text-white text-3xl px-4 hover:bg-blue-400">+</button>
     </div>
