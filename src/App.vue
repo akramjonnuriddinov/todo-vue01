@@ -11,7 +11,7 @@ const addBtn = () => {
   if(input.value !== '') {
     todos.value.push(input.value)
     input.value = ''
-    disabled = 1
+    disabled.value = 1
   }
 }
 
@@ -20,7 +20,7 @@ const removeBtn = (todo) => {
 }
 
 const editBtn = () => {
-  disabled = (disabled + 1) % 2
+  disabled.value = (disabled.value + 1) % 2
 }
 
 watch(todos, (newValue) => {
