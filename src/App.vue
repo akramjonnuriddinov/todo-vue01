@@ -23,30 +23,30 @@ const editBtn = () => {
   disabled = (disabled + 1) % 2
 }
 
-// watch(todos, (newValue) => {
-//   localStorage.setItem('todos', JSON.stringify(newValue))
-// }, {
-//   deep: true
-// })
+watch(todos, (newValue) => {
+  localStorage.setItem('todos', JSON.stringify(newValue))
+}, {
+  deep: true
+})
 
 
-// onMounted(() => {
-//   todos.value = JSON.parse(localStorage.getItem('todos'))
-// })
+onMounted(() => {
+  todos.value = JSON.parse(localStorage.getItem('todos'))
+})
 </script>
 
 <template>
-  <div class="bg-white container mx-auto px-5 my-5 max-w-2xl py-5">
-    <h1 class="text-2xl font-bold text-center mb-4">TODO LIST</h1>
+  <div class="container max-w-2xl px-5 py-5 mx-auto my-5 bg-white">
+    <h1 class="mb-4 text-2xl font-bold text-center">TODO LIST</h1>
     <div class="flex justify-between mb-8">
-      <input v-model="input" class="border px-2 py-2 w-full text-xl mr-4" type="text" placeholder="Enter the task">
-      <button @click="addBtn" class="bg-blue-500 text-white text-3xl px-4 hover:bg-blue-400">+</button>
+      <input v-model="input" class="w-full px-2 py-2 mr-4 text-xl border" type="text" placeholder="Enter the task">
+      <button @click="addBtn" class="px-4 text-3xl text-white bg-blue-500 hover:bg-blue-400">+</button>
     </div>
     <ul>
-      <li v-for="todo in todos" class="flex justify-between items-center py-2 border-t border-b px-2 hover:bg-sky-100">
+      <li v-for="todo in todos" class="flex items-center justify-between px-2 py-2 border-t border-b hover:bg-sky-100">
         <label for="checked" class="flex items-center w-full cursor-pointer">
           <input class="mr-4" type="checkbox" name="checked">
-          <input class="w-full outline-none bg-transparent text-xl text-gray-800" :disabled="disabled == 1" type="text" :value="todo">
+          <input class="w-full text-xl text-gray-800 bg-transparent outline-none" :disabled="disabled == 1" type="text" :value="todo">
         </label>
         <div class="flex items-center">
           <button @click="disabled = (disabled + 1) % 2" class="mr-4">
