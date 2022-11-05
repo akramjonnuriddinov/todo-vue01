@@ -32,7 +32,7 @@ watch(todos, (newValue) => {
 
 
 onMounted(() => {
-  if(localStorage.getItem('todos').value != null) {
+  if(localStorage.getItem('todos') != null) {
     todos.value = JSON.parse(localStorage.getItem('todos'))
   } else {
     todos.value = []
