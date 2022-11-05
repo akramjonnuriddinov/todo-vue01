@@ -32,11 +32,14 @@ watch(todos, (newValue) => {
 
 
 onMounted(() => {
-  if(localStorage.getItem('todos') != null) {
-    todos.value = JSON.parse(localStorage.getItem('todos'))
-  } else {
-    todos.value = []
-  }
+  // if(localStorage.getItem('todos') != null) {
+  //   todos.value = JSON.parse(localStorage.getItem('todos'))
+  //   console.log(todos.value)
+  // } else {
+  //   todos.value = []
+  //   console.log(todos.value)
+  // }
+  todos.value = JSON.parse(localStorage.getItem('todos')) || []
 })
 </script>
 
