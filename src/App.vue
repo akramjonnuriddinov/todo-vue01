@@ -1,10 +1,11 @@
 <script setup>
 import PenIcon from './components/icons/PenIcon.vue'
 import XmarkIcon from './components/icons/XmarkIcon.vue'
-import { ref, onMounted, watch } from 'vue'
+import { ref, reactive, onMounted, watch } from 'vue'
 
 const input = ref('')
 const todos = ref([])
+// const state = reactive({todos: []})
 let disabled = ref(1)
 
 const addBtn = () => {
@@ -31,7 +32,9 @@ watch(todos, (newValue) => {
 
 
 onMounted(() => {
-  todos.value = JSON.parse(localStorage.getItem('todos'))
+  if(localStorage.getItem('todos').value != null) {
+    todos.value = JSON.parse(localStorage.getItem('todos'))
+  }
 })
 </script>
 
