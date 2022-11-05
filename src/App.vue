@@ -49,7 +49,7 @@ onMounted(() => {
           <input class="w-full text-xl text-gray-800 bg-transparent outline-none" :disabled="disabled == 1" type="text" :value="todo">
         </label>
         <div class="flex items-center">
-          <button @click="disabled = (disabled + 1) % 2" class="mr-4">
+          <button @click="editBtn" class="mr-4">
             <PenIcon class="w-4 text-sky-700" />
           </button>
           <button @click="removeBtn(todo)">
